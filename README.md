@@ -1,1 +1,5 @@
-# struktur-data-golang
+# Linked list
+# Stack
+# Queue
+# Tree
+# Graph
