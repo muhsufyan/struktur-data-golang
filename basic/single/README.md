@@ -1,0 +1,1 @@
+membuat single linked list menggunakan struct
