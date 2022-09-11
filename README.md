@@ -1,26 +1,32 @@
-# Stack
-bersifat LIFO (last in first out), data yang terakhir masuk merupakan data yang akan keluar terlebih dahulu
+# Queue
+data yang pertama masuk akan keluar pertama juga (elemen data yang masuk pertama akan keluar lebih dulu). Biasanya kita sering tahu istrila FIFO (First In First Out)<br>
 ## pembuatan 
-untuk menyimpan data (ex nama buku) gunakan struct/class, agar mudah datanya berupa array jd tinggal append & delete bagian terakhir<br>
-tipe datanya kita buat int & string tp jika ingin dinamis tipe datanya adlh interface
-## penggambaran linked list sprti kereta api
-misalnya tumpukan buku, yang diatas atau yang terakhir masuk harus dikeluarkan terlebih dahulu untuk mendapatkan buku yang berada di tumpukan paling bawah<br>
-contoh lainnya, kamu mempunyai buku matematika, fisika, kimia dan biologi, Buku fisika kamu masukkan terlebih dahulu, lalu buku selanjutnya kimia, biologi, dan matematika. Nah, untuk mendapatkan buku kimia, kamu harus mengeluarkan buku biologi dan matematika terlebih dahulu karena kedua buku tersebut posisinya paling atas karena yang terakhir masuk<br>
+queue dpt dibuat memakai:<br>
+* Slices 
+* Structures
+* Link List
+#
+adapun tipe datanya bisa berupa array, slice, interface (if want dinamis)
+## penggambaran queue adlh orang yang mengantri
+barisan orang yang menunggu untuk membeli tiket di gedung bioskop. Orang yang baru datang akan bergabung dengan barisan dari ujung dan orang yang berdiri di depan akan menjadi yang pertama mendapatkan tiket dan meninggalkan barisan
+
 ## Jenis jenis
-tipe data untuk data nya sendiri dpt berupa<br>
-* array
-* slice
+* Simple Queue
+* Circular Queue
+* Priority Queue
+* Double-Ended Queue (Dequeue)
 ## operasi
-* append/add
-* pop/delete
-* top
-* isEmpty
-* size
+* Enqueue: Menambahkan elemen ke akhir antrian
+* Dequeue: Menghapus elemen dari depan antrian
+* IsEmpty: Memeriksa apakah antrian kosong
+* IsFull: Memeriksa apakah antrian sudah penuh
+* Peek: Mengetahui nilai bagian depan antrian
+* Initialize: Membuat antrian baru tanpa elemen data (kosong)
 ## sumber materi
-https://santekno.com/cara-implementasi-stack-golang/<br>
-https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
+https://www.trivusi.web.id/2022/07/struktur-data-queue.html#:~:text=Queue%20adalah%20struktur%20data%20linier,First%20In%2C%20First%20Out).<br>
+https://santekno.com/cara-implementasi-queue-antrian-golang/<br>
 ## sumber code
-https://santekno.com/cara-implementasi-stack-golang/<br>
-https://www.educative.io/answers/how-to-implement-a-stack-in-golang<br>
-https://www.mohitkhare.com/blog/stack-in-golang/
-#### NOTE : OPERASI STACK ADA DI FOLDER interface
+https://santekno.com/cara-implementasi-queue-antrian-golang/<br>
+https://www.geeksforgeeks.org/queue-in-go-language/<br>
+#### operasi lengkap ada di directory struct
+#### jenis jenis queue pada golang belum ada, hanya simple queue
