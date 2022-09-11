@@ -1,32 +1,25 @@
-# Queue
-data yang pertama masuk akan keluar pertama juga (elemen data yang masuk pertama akan keluar lebih dulu). Biasanya kita sering tahu istrila FIFO (First In First Out)<br>
+# Tree (binary tree)
+disbt binary tree karena bisa ada 2 cabang yaitu ke kanan, ke kiri
 ## pembuatan 
-queue dpt dibuat memakai:<br>
-* Slices 
-* Structures
-* Link List
-#
-adapun tipe datanya bisa berupa array, slice, interface (if want dinamis)
-## penggambaran queue adlh orang yang mengantri
-barisan orang yang menunggu untuk membeli tiket di gedung bioskop. Orang yang baru datang akan bergabung dengan barisan dari ujung dan orang yang berdiri di depan akan menjadi yang pertama mendapatkan tiket dan meninggalkan barisan
-
+setiap cabang & root disimpan dlm node yg dpt berupa struct, konektor antar cabang/root bisa berupa node dlm bntk struct.
+## penggambaran tree adlh pohon keturunan (silsilah) yg bercabang ke kiri, kanan
+perlu dicatat pada binary tree bisa dianggap bahwa setiap node (ortu) paling banyak hanya memiliki 2 cabang/anak (ikut program kb) tp urutan kanan lbh tua dr kiri itu tdk berlaku dulu (karena ini akan tergantung algoritma yg digunakan, dimana penelusuran bisa dari kanan dulu ke kiri/sebaliknya)<br> 
+root = akar, child right = cabangnya ke kanan, child left = cabangnya ke kiri<br>
+suatu child dpt berubah menjd root dari if child tsb memiliki child lagi<br>
+setiap node (child) / dlm silsilah itu org-nya memiliki level atau dlm silsilah disbt dg generasi, ex generasi ke 1 (paling tua, ex kakek) berarti level 1, generasi ke n (paling muda, ex kita) berarti level n
 ## Jenis jenis
-* Simple Queue
-* Circular Queue
-* Priority Queue
-* Double-Ended Queue (Dequeue)
+
 ## operasi
-* Enqueue: Menambahkan elemen ke akhir antrian
-* Dequeue: Menghapus elemen dari depan antrian
-* IsEmpty: Memeriksa apakah antrian kosong
-* IsFull: Memeriksa apakah antrian sudah penuh
-* Peek: Mengetahui nilai bagian depan antrian
-* Initialize: Membuat antrian baru tanpa elemen data (kosong)
+dalam melakukan pengunjungan ke node satu per satu (traversal), tree terbagi 3 jenis operasi yaitu
+* Preorder : root/value => left => right 
+* Inorder : left => value/root => right
+* Postorder : left => right => value/root
 ## sumber materi
-https://www.trivusi.web.id/2022/07/struktur-data-queue.html#:~:text=Queue%20adalah%20struktur%20data%20linier,First%20In%2C%20First%20Out).<br>
-https://santekno.com/cara-implementasi-queue-antrian-golang/<br>
+https://ieftimov.com/posts/golang-datastructures-trees/<br>
+https://www.youtube.com/watch?v=-oYitelECuQ<br>
+https://panjiologi.blogspot.com/2017/11/cara-mencari-preorder-inorder-postorder.html<br>
 ## sumber code
-https://santekno.com/cara-implementasi-queue-antrian-golang/<br>
-https://www.geeksforgeeks.org/queue-in-go-language/<br>
-#### operasi lengkap ada di directory struct
-#### jenis jenis queue pada golang belum ada, hanya simple queue
+https://www.golangprograms.com/golang-program-to-implement-binary-tree.html<br>
+https://santekno.com/cara-implementasi-binary-search-and-tree-golang/<br>
+https://www.youtube.com/watch?v=nL7BHR5vJDc<br>
+https://www.youtube.com/watch?v=-oYitelECuQ<br>

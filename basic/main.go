@@ -1,39 +1,79 @@
 package main
 
-import "fmt"
-
-type Queue struct {
-	items []int
+type Tree struct {
+	node *Node
 }
 
-func (q *Queue) Enqueue(i int) {
-	q.items = append(q.items, i)
-}
-
-func (q *Queue) Dequeue() int {
-	// empty
-	if len(q.items) == 0 {
-		return -1
+func (t *Tree) insert(value int) *Tree {
+	if t.node == nil {
+		t.node = &Node{value: value}
+	} else {
+		t.node.insert(value)
 	}
-	item, items := q.items[0], q.items[1:]
-	q.items = items
-	return item
+	return t
+}
+
+type Node struct {
+	value int
+	left  *Node
+	right *Node
+}
+
+func (n *Node) insert(value int) {
+	if value <= n.value {
+		if n.left == nil {
+			n.left = &Node{value: value}
+		} else {
+			n.left.insert(value)
+		}
+	} else {
+		if n.right == nil {
+			n.right = &Node{value: value}
+		} else {
+			n.right.insert(value)
+		}
+	}
+}
+
+func (n *Node) exists(value int) bool {
+	if n == nil {
+		return false
+	}
+
+	if n.value == value {
+		return true
+	}
+
+	println("value ", n.value)
+	if value <= n.value {
+		return n.left.exists(value)
+	} else {
+		return n.right.exists(value)
+	}
+}
+
+func printNode(n *Node) {
+	if n == nil {
+		return
+	}
+
+	println(n.value)
+	printNode(n.left)
+	printNode(n.right)
 }
 
 func main() {
-	q := Queue{}
-	fmt.Println("=======Enqueue=======")
-	q.Enqueue(1)
-	fmt.Println(q)
-	q.Enqueue(2)
-	fmt.Println(q)
-	q.Enqueue(3)
-	fmt.Println(q)
-	fmt.Println("=======Dequeue=======")
-	println(q.Dequeue())
-	fmt.Println(q)
-	println(q.Dequeue())
-	fmt.Println(q)
-	println(q.Dequeue())
-	fmt.Println(q)
+	t := &Tree{}
+	t.insert(10).
+		insert(8).
+		insert(20).
+		insert(9).
+		insert(0).
+		insert(15).
+		insert(25)
+
+	// print all node
+	printNode(t.node)
+	// find exist
+	println(t.node.exists(26))
 }
