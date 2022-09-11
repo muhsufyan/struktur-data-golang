@@ -21,4 +21,6 @@ https://santekno.com/cara-implementasi-stack-golang/<br>
 https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
 ## sumber code
 https://santekno.com/cara-implementasi-stack-golang/<br>
-https://www.educative.io/answers/how-to-implement-a-stack-in-golang
+https://www.educative.io/answers/how-to-implement-a-stack-in-golang<br>
+https://www.mohitkhare.com/blog/stack-in-golang/
+#### NOTE : OPERASI STACK ADA DI FOLDER interface
